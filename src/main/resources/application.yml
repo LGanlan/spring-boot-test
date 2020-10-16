@@ -11,5 +11,7 @@ spring:
     suffix: .html
     request-context-attribute: request
 
-mybatis:
+mybatis-plus:
   mapper-locations: classpath*:com/fgo/**/mapping/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #开启sql日志

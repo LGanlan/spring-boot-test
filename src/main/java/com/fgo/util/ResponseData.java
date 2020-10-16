@@ -14,8 +14,8 @@ public class ResponseData {
     // 返回数据
     private Object data;
 
-    public ResponseData() {
-        this.code = 500;
+    public ResponseData(Integer code) {
+        this.code = code;
     }
 
     public ResponseData(Object data) {
@@ -23,12 +23,16 @@ public class ResponseData {
         this.data = data;
     }
 
+    public static ResponseData success() {
+        return new ResponseData(200);
+    }
+
     public static ResponseData success(Object data) {
         return new ResponseData(data);
     }
 
     public static ResponseData error() {
-        return new ResponseData();
+        return new ResponseData(500);
     }
 
 }

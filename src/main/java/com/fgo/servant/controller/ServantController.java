@@ -1,14 +1,13 @@
 package com.fgo.servant.controller;
 
-import com.fgo.servant.model.result.ServantResult;
+import com.fgo.servant.model.param.ServantParam;
 import com.fgo.servant.service.ServantService;
 import com.fgo.util.ResponseData;
+import com.fgo.util.page.LayuiPageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.util.List;
 
 /**
  * 从者控制器
@@ -33,10 +32,48 @@ public class ServantController {
      */
     @ResponseBody
     @RequestMapping("/list")
-    public ResponseData list() {
+    public LayuiPageInfo list() {
+        return servantService.list();
+    }
+
+    /**
+     * 添加
+     */
+    @ResponseBody
+    @RequestMapping("/insert")
+    public ResponseData insert(ServantParam servantParam) {
         try {
-            List<ServantResult> list = servantService.list();
-            return ResponseData.success(list);
+            servantService.insert(servantParam);
+            return ResponseData.success();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseData.error();
+        }
+    }
+
+    /**
+     * 修改
+     */
+    @ResponseBody
+    @RequestMapping("/update")
+    public ResponseData update(ServantParam servantParam) {
+        try {
+            servantService.update(servantParam);
+            return ResponseData.success();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseData.error();
+        }
+    }
+
+    /**
+     * 删除
+     */
+    @ResponseBody
+    @RequestMapping("/delete")
+    public ResponseData delete(ServantParam servantParam) {
+        try {
+            return ResponseData.success();
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseData.error();

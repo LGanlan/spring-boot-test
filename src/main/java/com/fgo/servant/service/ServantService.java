@@ -1,14 +1,28 @@
 package com.fgo.servant.service;
 
-import com.fgo.servant.model.result.ServantResult;
-
-import java.util.List;
+import com.fgo.servant.model.param.ServantParam;
+import com.fgo.util.page.LayuiPageInfo;
 
 public interface ServantService {
 
     /**
      * 列表
      */
-    public List<ServantResult> list();
+    public LayuiPageInfo list();
+
+    /**
+     * 添加
+     */
+    int insert(ServantParam servantParam);
+
+    /**
+     * 修改
+     */
+    int update(ServantParam servantParam);
+
+    /**
+     * 删除
+     */
+    int delete(ServantParam servantParam);
 
 }

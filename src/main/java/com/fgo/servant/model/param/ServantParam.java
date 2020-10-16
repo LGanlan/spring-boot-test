@@ -20,4 +20,7 @@ public class ServantParam {
         // 评分id
         private Long scoreId;
 
+        // 是否拥有（0 否 1 是）
+        private int isHas;
+
 }
