@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fgo.module.servant.mapper.ServantMapper">
+
+    <select id="list" resultType="com.fgo.module.servant.model.result.ServantResult">
+        SELECT
+            *
+        FROM
+            servant
+        WHERE
+            1 = 1
+    </select>
+
+</mapper>
