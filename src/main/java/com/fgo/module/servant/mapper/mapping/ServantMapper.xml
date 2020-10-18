@@ -4,11 +4,23 @@
 
     <select id="list" resultType="com.fgo.module.servant.model.result.ServantResult">
         SELECT
-            *
+        *
         FROM
-            servant
+        servant
         WHERE
-            1 = 1
+        1 = 1
+        <if test="param.name != null and param.name != '' ">
+            AND name LIKE concat("%",#{param.name},"%")
+        </if>
+        <if test="param.classId != null">
+            AND class_id = #{param.classId}
+        </if>
+        <if test="param.scoreId != null">
+            AND score_id = #{param.scoreId}
+        </if>
+        <if test="param.isHas != null">
+            AND is_has = #{param.isHas}
+        </if>
     </select>
 
 </mapper>

@@ -1,0 +1,41 @@
+<script>
+    var ctxPath = "${request.contextPath}"
+</script>
+<script src="${request.contextPath}/servant/js/servant_add.js"></script>
+
+<div class="layuimini-main">
+
+    <div class="layui-form layuimini-form">
+        <div class="layui-form-item">
+            <label class="layui-form-label required">姓名</label>
+            <div class="layui-input-block">
+                <input type="text" name="name" lay-verify="required" lay-reqtext="姓名不能为空" placeholder="请输入姓名"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label required">职阶</label>
+            <div class="layui-input-block">
+                <input type="text" name="classId" lay-verify="required" lay-reqtext="请选择职阶" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label required">评分</label>
+            <div class="layui-input-block">
+                <input type="text" name="scoreId" lay-verify="required" lay-reqtext="请评分" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <input type="radio" name="isHas" value="0" title="未拥有" checked="">
+                <input type="radio" name="isHas" value="1" title="已拥有">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn layui-btn-normal" lay-submit lay-filter="saveBtn">确认保存</button>
+            </div>
+        </div>
+    </div>
+</div>

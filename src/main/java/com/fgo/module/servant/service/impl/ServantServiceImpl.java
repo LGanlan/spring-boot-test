@@ -21,9 +21,9 @@ public class ServantServiceImpl implements ServantService {
     private ServantMapper servantMapper;
 
     @Override
-    public LayuiPageInfo list() {
+    public LayuiPageInfo list(ServantParam servantParam) {
         Page page = LayuiPageFactory.defaultPage();
-        IPage<ServantResult> servantResultPage = servantMapper.list(page);
+        IPage<ServantResult> servantResultPage = servantMapper.list(page, servantParam);
         return LayuiPageFactory.createPageInfo(servantResultPage);
     }
 
@@ -44,6 +44,15 @@ public class ServantServiceImpl implements ServantService {
     @Override
     public int delete(ServantParam servantParam) {
         return servantMapper.deleteById(servantParam.getId());
+    }
+
+    @Override
+    public ServantResult detail(ServantParam servantParam) {
+        Servant servant = servantMapper.selectById(servantParam.getId());
+        ServantResult servantResult = new ServantResult();
+        BeanUtil.copyProperties(servant, servantResult);
+        servantResult.setId(servant.getId().toString());
+        return servantResult;
     }
 
 }

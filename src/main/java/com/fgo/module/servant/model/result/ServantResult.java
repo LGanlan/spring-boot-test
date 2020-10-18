@@ -9,7 +9,7 @@ import lombok.Data;
 public class ServantResult {
 
     // 主键id
-    private Long id;
+    private String id;
 
     // 姓名
     private String name;

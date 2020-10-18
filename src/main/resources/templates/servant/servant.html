@@ -1,3 +1,6 @@
+<script>
+    var ctxPath = "${request.contextPath}"
+</script>
 <script src="${request.contextPath}/servant/js/servant.js"></script>
 
 <style>
@@ -25,30 +28,29 @@
                         <div class="layui-inline">
                             <label class="layui-form-label">姓名</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="username" autocomplete="off" class="layui-input">
+                                <input type="text" id="name" name="name" autocomplete="off" class="layui-input">
                             </div>
                         </div>
                         <div class="layui-inline">
                             <label class="layui-form-label">职阶</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="sex" autocomplete="off" class="layui-input">
+                                <input type="text" id="classId" name="classId" autocomplete="off" class="layui-input">
                             </div>
                         </div>
                         <div class="layui-inline">
                             <label class="layui-form-label">评分</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="city" autocomplete="off" class="layui-input">
+                                <input type="text" id="scoreId" name="scoreId" autocomplete="off" class="layui-input">
                             </div>
                         </div>
                         <div class="layui-inline">
                             <label class="layui-form-label">已拥有</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="classify" autocomplete="off" class="layui-input">
+                                <input type="text" id="isHas" name="isHas" autocomplete="off" class="layui-input">
                             </div>
                         </div>
                         <div class="layui-inline">
-                            <button type="submit" class="layui-btn layui-btn-primary" lay-submit
-                                    lay-filter="data-search-btn"><i class="layui-icon"></i> 搜 索
+                            <button id="searchBtn" class="layui-btn layui-btn-primary"><i class="layui-icon"></i> 搜 索
                             </button>
                         </div>
                     </div>
@@ -62,7 +64,7 @@
             </div>
         </script>
 
-        <table class="layui-hide" id="dataTable"></table>
+        <table class="layui-hide" id="dataTable" lay-filter="dataTableFilter"></table>
 
         <script type="text/html" id="tableBar">
             <a class="layui-btn layui-btn-normal layui-btn-xs data-count-edit" lay-event="edit">编辑</a>
