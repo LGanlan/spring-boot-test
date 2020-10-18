@@ -1,13 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>从者列表</title>
-    <link rel="stylesheet" href="${request.contextPath}/common/layui/css/layui.css">
-    <script src="${request.contextPath}/common/layui/layui.js"></script>
-    <script src="${request.contextPath}/servant/js/servant.js"></script>
-</head>
-<body>
-从者列表
-</body>
-</html>
+<script src="${request.contextPath}/servant/js/servant.js"></script>
+
+<style>
+    .layui-form-pane .layui-form-label {
+        width: 74px;
+    }
+
+    .layui-form-item .layui-input-inline {
+        width: 189px;
+    }
+
+    .layuimini-container .table-search-fieldset {
+        padding-right: 0px;
+    }
+</style>
+
+<div class="layuimini-container layuimini-page-anim">
+    <div class="layuimini-main">
+
+        <fieldset class="table-search-fieldset">
+            <legend>搜索</legend>
+            <div style="margin: 0px 10px 0px 17px">
+                <form class="layui-form layui-form-pane" action="">
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">姓名</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="username" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">职阶</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="sex" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">评分</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="city" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">已拥有</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="classify" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <button type="submit" class="layui-btn layui-btn-primary" lay-submit
+                                    lay-filter="data-search-btn"><i class="layui-icon"></i> 搜 索
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </fieldset>
+
+        <script type="text/html" id="toolbar">
+            <div class="layui-btn-container">
+                <button class="layui-btn layui-btn-normal layui-btn-sm data-add-btn" lay-event="add"> 添加</button>
+            </div>
+        </script>
+
+        <table class="layui-hide" id="dataTable"></table>
+
+        <script type="text/html" id="tableBar">
+            <a class="layui-btn layui-btn-normal layui-btn-xs data-count-edit" lay-event="edit">编辑</a>
+            <a class="layui-btn layui-btn-xs layui-btn-danger data-count-delete" lay-event="delete">删除</a>
+        </script>
+
+    </div>
+</div>

@@ -1,0 +1,45 @@
+{
+  "homeInfo": {
+    "title": "首页",
+    "href": "welcome"
+  },
+  "logoInfo": {
+    "title": "LAYUI MINI",
+    "image": "common/layuimini/images/logo.png",
+    "href": ""
+  },
+  "menuInfo": [
+    {
+      "title": "常规管理",
+      "icon": "fa fa-address-book",
+      "href": "",
+      "target": "_self",
+      "child": [
+        {
+          "title": "基础数据管理",
+          "href": "baseDate",
+          "icon": "fa fa-window-maximize",
+          "target": "_self",
+          "child": [
+            {
+              "title": "职阶管理",
+              "href": "class",
+              "target": "_self"
+            },
+            {
+              "title": "评分管理",
+              "href": "score",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "从者管理",
+          "href": "servant",
+          "icon": "fa fa-window-maximize",
+          "target": "_self"
+        }
+      ]
+    }
+  ]
+}
